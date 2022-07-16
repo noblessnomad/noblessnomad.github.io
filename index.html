@@ -1,12 +1,13 @@
 ---
 # 머리말은 Jekyll 에게 Liquid를 처리하라고 지시합니다.
+title: Home
 ---
 
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>{{ page.title }}</title>
   </head>
   <body>
     <h1>{{ "Hello World!" | downcase }}</h1>
