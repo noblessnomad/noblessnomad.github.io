@@ -1,0 +1,13 @@
+https://jekyllrb-ko.github.io/
+위 사이트를 참조하여 Tutorial을 진행합니다.
+
+0. 빠른 시작
+[Issue] jekyll serve 시 Build error 발생
+Auto-regeneration: enabled for 'C:/noblessnomad.github.io/myblog'
+                    ------------------------------------------------
+      Jekyll 4.2.2   Please append `--trace` to the `serve` command
+                     for any additional information or backtrace.
+                    ------------------------------------------------
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-4.2.2/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file -- webrick (LoadError)
+
+[Solve] bundle add webrick으로 webrick을 추가해 주고 다시 실행. ruby 3.0.0부터 webrick이 gem에서 제외됨.
