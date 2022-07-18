@@ -2,6 +2,8 @@ collections:
   authors:
     output: true
 
+url: 'http://noblessnomad.github.io'
+
 defaults:
   - scope:
       path: ""
