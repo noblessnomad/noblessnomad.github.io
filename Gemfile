@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 gemspec
 gem "github-pages"
+gem 'rake'
 
 gem "webrick", "~> 1.7"
 

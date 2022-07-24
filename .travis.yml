@@ -1,0 +1,27 @@
+# 루비를 이용하여 빌드.
+language: ruby
+
+# 번들러의 캐시 기능을 사용.
+cache: bundler
+
+# 빌드에 필요한 gem 파일들을 다운로드.
+install:
+  - bundle install
+
+# rake를 이용하여 jekyll 실행.
+script:
+  - bundle exec rake site:deploy --quiet
+
+# gh-pages 브랜치의 push 또는 pull request 이벤트에 대해서 실행.
+branches:
+  only:
+    - gh-pages
+
+# rvm 버전을 설정
+rvm:
+  - 2.6.3
+
+# travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'
+env:
+  global:
+    secure: <your_secure_code>
