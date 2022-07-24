@@ -8,18 +8,35 @@
 
 <div class="common-list">
   <ul>
-    <li>
-      <a href="{{ '/index.html' | relative_url }}">
-        All<span>{{ site.posts.size }}</span>
-      </a>
-    </li>
-
-    {% for key in  keys %}
+    {% if field == 'categories' %}
       <li>
-        <a href="{{ url }}#h-{{ key }}">
-          {{ key }} <span>{{ site.posts | where: field, key | size }}</span>
+        <a href="{{ '/categories.html' | relative_url }}">
+          All<span>{{ site.posts.size }}</span>
         </a>
       </li>
-    {% endfor %}
+
+      {% for key in  keys %}
+        {% assign category_url = {{'{{ field }}' | append: '/' | append : key | append: '/index.html'}} %}
+        <li>
+          <a href="{{ category_url | relative_url}}">
+            {{ key }} <span>{{ site.posts | where: field, key | size }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>
+        <a href="{{ '/index.html' | relative_url }}">
+          All<span>{{ site.posts.size }}</span>
+        </a>
+      </li>
+
+      {% for key in  keys %}
+        <li>
+          <a href="{{ url }}#h-{{ key }}">
+            {{ key }} <span>{{ site.posts | where: field, key | size }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    {% endif %}
   </ul>
 </div>
