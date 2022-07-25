@@ -1,0 +1,17 @@
+Paginator 실행
+_config.yml
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-spaceship
+  - jekyll-paginate-v2
+
+Gemfile
+group :jekyll_plugins do
+    gem 'jekyll-sitemap'
+    gem 'jekyll-feed'
+    gem 'jekyll-seo-tag'
+    gem 'jekyll-paginate-v2'
+  end
